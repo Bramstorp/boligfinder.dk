@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class agentModel:
+class AgentModel:
     full_name = models.CharField(max_length=50)
     photo = models.ImageField()
     description = models.TextField(blank=True)
