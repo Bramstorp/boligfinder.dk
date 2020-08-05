@@ -6,4 +6,3 @@ node_modules
 build
 static
 package-lock.json
-__pycache__/
