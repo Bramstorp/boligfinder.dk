@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'agent',
+    'house',
+    'contact',
+    'listing',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +130,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
