@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class ListingModel(models.model)
+class ListingModel(models.Model):
 	SALETYPE = [
 	    ('FOR_SALE', 'For Sale'),
 	    ('FOR_RENT', 'For Rent'),
@@ -14,12 +14,12 @@ class ListingModel(models.model)
 	    ('MANSION', 'Mansion')
 
 	]
-	slug = model.CharField(max_length=50),
-	title = model.CharField(max_length=50),
-	description = model.TextField(),
-	sale_type = model.CharField(choices=HOUSETYPE)
-	price = model.IntegerField(),
-	home_type = model.CharField(choices=HouseType),
+	slug = models.CharField(max_length=50),
+	title = models.CharField(max_length=50),
+	description = models.TextField(),
+	sale_type = models.CharField(max_length=50, choices=SALETYPE)
+	price = models.IntegerField(),
+	home_type = models.CharField(max_length=50, choices=HOUSETYPE),
 	open_house = models.BooleanField(default=False),
 	main_image = models.ImageField(),
 	image_1 = models.ImageField(),
