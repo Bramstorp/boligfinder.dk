@@ -85,8 +85,11 @@ WSGI_APPLICATION = 'base.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'boligfinder',
+        'USER': 'postgres',
+        'PASSWORD': 'admin1234!',
+        'HOST': 'localhost'
     }
 }
 
@@ -142,4 +145,6 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+AUTH_USER_MODEL = "user.UserAccount"
 
