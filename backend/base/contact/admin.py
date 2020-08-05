@@ -3,4 +3,4 @@ from django.contrib import admin
 from .models import ContactModel
 
 # Register your models here.
-admin.site.Register(ContactModel)
+admin.site.register(ContactModel)

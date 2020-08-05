@@ -6,4 +6,4 @@ class ContactModel(models.Model):
     email = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
     message = models.TextField()
-    contact_date = models.DateTimeField(default=datetime.now, blank=True)
+    contact_date = models.DateTimeField(auto_now_add=True, blank=True)
