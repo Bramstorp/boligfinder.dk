@@ -28,6 +28,7 @@ urlpatterns = [
     path("api/agent/", include("agent.urls")),
     path("api/contact/", include("contact.urls")),
     path("api/house/", include("house.urls")),
+    path("api/listing/", include("listing.urls")),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

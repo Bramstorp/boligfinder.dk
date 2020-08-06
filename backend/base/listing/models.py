@@ -2,24 +2,25 @@ from django.db import models
 
 # Create your models here.
 class ListingModel(models.Model):
-	SALETYPE = [
-	    ('FOR_SALE', 'For Sale'),
-	    ('FOR_RENT', 'For Rent'),
-	]
-	HOUSETYPE = [
-	    ('APARTMENT', 'Apartment'),
-	    ('VILLA', 'Villa'),
-	    ('TERRACED_HOUSE', 'Terraced house'),
-	    ('FARM_HOUSE', 'Farm house'),
-	    ('MANSION', 'Mansion')
+	
+	class SALETYPE(models.TextChoices):
+		FOR_SALE = "For Sale"
+		FOR_RENT = "For Rent"
+	
 
-	]
+	class HOUSETYPE(models.TextChoices):
+	    APARTMENT = "Apartment"
+	    VILLA = "Villa"
+	    TERRACED_HOUSE = "Terraced house"
+	    FARM_HOUSE = "Farm house"
+	    MANSION = "Mansion"
+
 	slug = models.CharField(max_length=50),
 	title = models.CharField(max_length=50),
 	description = models.TextField(),
-	sale_type = models.CharField(max_length=50, choices=SALETYPE)
+	sale_type = models.CharField(max_length=50, choices=SALETYPE.choices)
 	price = models.IntegerField(),
-	home_type = models.CharField(max_length=50, choices=HOUSETYPE),
+	home_type = models.CharField(max_length=50, choices=HOUSETYPE.choices),
 	open_house = models.BooleanField(default=False),
 	main_image = models.ImageField(),
 	image_1 = models.ImageField(),
