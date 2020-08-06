@@ -1,7 +1,7 @@
 # boligfinder.dk
 Real Estate
 
-## -Frontend Setup-
+## Frontend Setup
 
 ## Available Scripts
 
