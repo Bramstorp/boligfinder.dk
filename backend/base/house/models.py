@@ -7,6 +7,6 @@ class HouseModel(models.Model):
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=100)
     bedrooms = models.IntegerField()
-    bathrooms = models.DecimalField()
+    bathrooms = models.DecimalField(max_digits=5, decimal_places=2)
     sqft = models.IntegerField()
     build = models.DateTimeField()
