@@ -11,10 +11,34 @@ class ListingViewSet(viewsets.ModelViewSet):
 """
 
 from rest_framework.generics import (
-    ListCreateAPIView
+    ListCreateAPIView,
+    RetrieveUpdateAPIView,
+    RetrieveDestroyAPIView,
+    ListAPIView
 )
 
-class ListingistView(ListCreateAPIView):
+class ListingListView(ListAPIView):
     queryset = ListingModel.objects.all()
     serializer_class = ListingSerializer
     permission_classes = (permissions.AllowAny, )
+
+class ListingUpdateView(RetrieveUpdateAPIView):
+    queryset = ListingModel.objects.all()
+    serializer_class = ListingSerializer
+    permission_classes = (permissions.AllowAny, )
+
+class ListingCreateView(ListCreateAPIView):
+    queryset = ListingModel.objects.all()
+    serializer_class = ListingSerializer
+    permission_classes = (permissions.AllowAny, )
+
+class ListingDeleteView(RetrieveDestroyAPIView):
+    queryset = ListingModel.objects.all()
+    serializer_class = ListingSerializer
+    permission_classes = (permissions.AllowAny, )
+
+class ListingObjectsView(ListAPIView):
+    queryset = ListingModel.objects.all()
+    serializer_class = ListingSerializer
+    permission_classes = (permissions.AllowAny, )
+

@@ -10,10 +10,17 @@ urlpatterns = router.urls
 from django.urls import path
 
 from .views import (
-    ListingistView,
-
+    ListingListView,
+    ListingUpdateView,
+    ListingDeleteView,
+    ListingObjectsView,
+    ListingCreateView
 )
 
 urlpatterns = [
-    path('', ListingistView.as_view()),
+    path('', ListingListView.as_view()),
+    path('create/', ListingCreateView.as_view()),
+    path('<pk>/', ListingObjectsView.as_view()),
+    path('<pk>/update', ListingUpdateView.as_view()),
+    path('<pk>/delete', ListingDeleteView.as_view()),
 ]
