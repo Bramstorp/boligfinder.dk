@@ -10,8 +10,5 @@ class AgentModel(models.Model):
     top_seller = models.BooleanField(default=False)
     date_hired = models.DateTimeField(auto_now_add=True, blank=True)
 
-	def __str__(self):
-		return self.full_name
-
-
-    
+    def __str__(self):
+    	return self.full_name   

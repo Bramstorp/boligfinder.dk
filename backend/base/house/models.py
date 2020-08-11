@@ -11,5 +11,5 @@ class HouseModel(models.Model):
     sqft = models.IntegerField()
     build = models.DateTimeField()
 
-   	def __str__(self):
-		return self.address
+    def __str__(self):
+        return self.address

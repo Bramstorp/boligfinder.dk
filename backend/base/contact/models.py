@@ -8,5 +8,5 @@ class ContactModel(models.Model):
     message = models.TextField()
     contact_date = models.DateTimeField(auto_now_add=True, blank=True)
 
-   	def __str__(self):
-		return self.email
+    def __str__(self):
+    	return self.email
