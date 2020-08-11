@@ -4,12 +4,13 @@ import Listing from "../Component/ListingComponent"
 
 
 class Homepage extends React.Component {
-	
-	state = {
-		listing: []
+	constructor(props) {
+		super(props)
+		this.state = {
+			listings: []
+		}
 	}
-  	
-
+	
 	componentDidMount() {
 		axios.get("http://127.0.0.1:8000/api/listing/")
 			.then(res => {
@@ -23,10 +24,11 @@ class Homepage extends React.Component {
 	render() {
 		return(
 			<div>
-				<Listing data={this.state.listing}/>
+				<Listing data={this.state.listing}/>'
 			</div>
 		)
 	}
+	
 
 }
 

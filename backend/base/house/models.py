@@ -10,3 +10,6 @@ class HouseModel(models.Model):
     bathrooms = models.DecimalField(max_digits=5, decimal_places=2)
     sqft = models.IntegerField()
     build = models.DateTimeField()
+
+   	def __str__(self):
+		return self.address
