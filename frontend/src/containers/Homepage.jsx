@@ -4,10 +4,11 @@ import Listing from "../Component/ListingComponent"
 
 
 class Homepage extends React.Component {
-	constructor(props) {
-    	super(props)
-    	this.state = {listing: []}
-  	}
+	
+	state = {
+		listing: []
+	}
+  	
 
 	componentDidMount() {
 		axios.get("http://127.0.0.1:8000/api/listing/")
