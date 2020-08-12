@@ -1,12 +1,9 @@
-import React, {Component} from "react"
+import React from 'react'
 
-class Listing extends Component {
-	render() {
-	console.log(this.props)
-		return (
-			<h1>{this.props.title}</h1>
-		)
-	}
-}
+const Listing = () => (
+	<div>
+		test
+	</div>
+)
 
 export default Listing

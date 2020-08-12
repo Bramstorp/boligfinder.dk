@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import Listing from "../Component/ListingComponent"
+import ListingForm from "../Component/ListingForm"
 
 
 class Homepage extends React.Component {
@@ -24,7 +25,8 @@ class Homepage extends React.Component {
 	render() {
 		return(
 			<div>
-				<Listing data={this.state.listing}/>'
+				<ListingForm />
+				<Listing data={this.state.listing}/>
 			</div>
 		)
 	}
