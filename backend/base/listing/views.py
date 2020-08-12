@@ -41,4 +41,3 @@ class ListingObjectsView(ListAPIView):
     queryset = ListingModel.objects.all()
     serializer_class = ListingSerializer
     permission_classes = (permissions.AllowAny, )
-
