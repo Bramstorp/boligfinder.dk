@@ -1,14 +1,7 @@
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px 300px;
+.SecondRow{
+	padding-top: 15px;
 }
 
-.flex-container > .flex-item {
-  justify-content: space-between;
-  padding-left: 10px;
-  flex: auto;
-  display: flex;
+.buttonTest{
+	margin-top: 43px;
 }
-
