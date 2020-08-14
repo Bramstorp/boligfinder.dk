@@ -5,12 +5,11 @@ import {applyMiddleware, createStore} from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 
 const initialState = {}
-const middleware = applyMiddleware[thunk]
+const middleware = [thunk]
 
 const store = createStore (
 	rootReducer,
 	initialState,
 	composeWithDevTools(applyMiddleware(...middleware))
 )
-
 export default store
