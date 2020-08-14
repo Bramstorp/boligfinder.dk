@@ -12,4 +12,7 @@ const store = createStore (
 	initialState,
 	composeWithDevTools(applyMiddleware(...middleware))
 )
+
+console.log(store.getState())
+
 export default store
