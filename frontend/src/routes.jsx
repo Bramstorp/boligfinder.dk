@@ -5,6 +5,7 @@ import About from "./containers/About"
 import Contactpage from "./containers/Contact"
 import Homepage from "./containers/Homepage"
 import Listing_Details from "./containers/Listing_Details"
+import Listing from "./containers/Listing"
 import SignIn from "./containers/SignIn"
 import SignUp from "./containers/SignUp"
 
@@ -18,6 +19,7 @@ const BaseRoutes  = () => (
 				<Route exact path="/" component={Homepage} />
 				<Route exact path="/contact" component={Contactpage} />
 				<Route exact path="/listing_details/:id" component={Listing_Details} />
+				<Route exact path="/listing" component={Listing} />
 				<Route exact path="/about" component={About} />
 				<Route exact path="/signin" component={SignIn} />
 				<Route exact path="/signup" component={SignUp} />
