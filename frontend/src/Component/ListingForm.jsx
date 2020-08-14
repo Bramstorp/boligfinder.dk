@@ -13,8 +13,8 @@ function handleChange(value) {
 }
 
 const ListingForm = () => (
-	<div>
-	    <Row>	    
+	<div className="listform">
+	    <Row className="rowform">	    
 	      <Col span={2}>
 	      	<h1>Sale or Rent</h1>
 	      	<Select defaultValue="Sale or Rent" style={{ width: 120 }} onChange={handleChange}>
@@ -78,6 +78,7 @@ const ListingForm = () => (
 	      enterButton="Search"
 	      size="large"
 	      onSearch={value => console.log(value)}
+	      className="Searchbar"
 	    />
 
     </div>

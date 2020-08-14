@@ -2,7 +2,7 @@ import React from 'react'
 
 const Listing = () => (
 	<div>
-		test
+		Listing Data
 	</div>
 )
 

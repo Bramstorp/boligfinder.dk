@@ -1,11 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import navbar from "../Component/Navbar"
 
 class CustomLayout extends React.Component {
   render() {
     return (
       <div>
-        <h1>Navbar</h1>
+        <navbar />
           <div>
             {this.props.children}
           </div>
