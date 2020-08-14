@@ -20,7 +20,9 @@ export const signup = ({ name, email, password, password2 }) => async dispatch =
         });
 
         dispatch(login(email, password))
-    } catch (err) {
+    } 
+
+    catch (err) {
         dispatch({
             type: SIGNUP_FAIL
         });
@@ -47,7 +49,9 @@ export const login = (email, password) => async dispatch => {
         });
 
         dispatch(setAlert('Authenticated successfully', 'success'))
-    } catch (err) {
+    } 
+
+    catch (err) {
         dispatch({
             type: LOGIN_FAIL
         });
