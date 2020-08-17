@@ -1,19 +1,16 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import navbar from "../Component/Navbar"
+import Navbar from "../Component/Navbar"
+import Footer from "../Component/Footer"
 
-class CustomLayout extends React.Component {
-  render() {
-    return (
-      <div>
-        <navbar />
-          <div>
-            {this.props.children}
-          </div>
-        <h1>Footer</h1>
-      </div> 
-    )
-  }
-}
+
+const CustomLayout = (props) => (
+  <div>
+    <Navbar />
+    <br />
+    {props.children}
+    <br />
+    <Footer />
+  </div> 
+)
 
 export default CustomLayout
