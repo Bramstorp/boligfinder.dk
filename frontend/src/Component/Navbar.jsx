@@ -1,15 +1,20 @@
 import React from 'react'
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "../assets/Navbar.style.scss"
 
-const Navbar = () => (
-    <header className='navbar'>
-        <div className='navbar__title navbar__item'>BoligFinder</div>
-        <div className='navbar__item'>Home</div>
-        <div className='navbar__item'>Contact</div>
-        <div className='navbar__item'>About</div>   
-        <div className='navbar__item'>Login</div> 
-        <div className='navbar__item'>Sign up</div>      
-    </header>
-)
+class Navbar extends React.Component {
+	render() {
+		return(
+		    <header className='navbar'>
+		        <Link className='navbar__title navbar__item' to='/'>BoligFinder</Link>
+		        <Link className='navbar__item' to='/'>Home</Link>
+		        <Link className='navbar__item' to='/contact'>Contact</Link>
+		        <Link className='navbar__item' to='/about'>About</Link>   
+		        <Link className='navbar__item' to='/signin'>Login</Link> 
+		        <Link className='navbar__item' to='/signup'>Sign up</Link>      
+		    </header>
+	    )
+    }
+}
 
 export default Navbar

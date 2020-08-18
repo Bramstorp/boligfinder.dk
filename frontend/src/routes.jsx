@@ -14,17 +14,13 @@ import store from "./store"
 
 const BaseRoutes  = () => (
 	<Provider store={store}>
-		<Router>
-			<Switch>
-				<Route exact path="/" component={Homepage} />
-				<Route exact path="/contact" component={Contactpage} />
-				<Route exact path="/listing_details/:id" component={Listing_Details} />
-				<Route exact path="/listing" component={Listing} />
-				<Route exact path="/about" component={About} />
-				<Route exact path="/signin" component={SignIn} />
-				<Route exact path="/signup" component={SignUp} />
-			</Switch>
-		</Router>
+		<Route exact path="/" component={Homepage} />
+		<Route exact path="/contact" component={Contactpage} />
+		<Route exact path="/listing_details/:id" component={Listing_Details} />
+		<Route exact path="/listing" component={Listing} />
+		<Route exact path="/about" component={About} />
+		<Route exact path="/signin" component={SignIn} />
+		<Route exact path="/signup" component={SignUp} />
 	</Provider>
 )
 
