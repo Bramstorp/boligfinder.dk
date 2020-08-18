@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
 import BaseRoutes from "./routes"
 import 'antd/dist/antd.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import CustomLayout from "./hocs/Layout"
 
