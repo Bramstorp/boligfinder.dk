@@ -7,7 +7,7 @@ from rest_framework.generics import (
     RetrieveUpdateAPIView,
     RetrieveDestroyAPIView,
     RetrieveAPIView,
-    ListAPIView
+    ListAPIView,
 )
 
 class ListingListView(ListAPIView):
