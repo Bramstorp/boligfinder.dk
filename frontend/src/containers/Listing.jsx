@@ -14,7 +14,6 @@ class Listing extends React.Component  {
 				this.setState({
 					listings: res.data
 				})
-				//console.log(res.data)
 			})			
 	}
 

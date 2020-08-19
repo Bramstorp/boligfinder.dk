@@ -19,7 +19,7 @@ const BaseRoutes  = () => (
 		<Switch>
 			<Route exact path="/" component={Homepage} />
 			<Route exact path="/contact" component={Contactpage} />
-			<Route exact path="/listing_details/:id" component={Listing_Details} />
+			<Route exact path="/listing_details/:listingID/" component={Listing_Details} />
 			<Route exact path="/listing" component={Listing} />
 			<Route exact path="/about" component={About} />
 			<Route exact path="/signin" component={SignIn} />

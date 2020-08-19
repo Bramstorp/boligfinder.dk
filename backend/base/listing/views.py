@@ -6,6 +6,7 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateAPIView,
     RetrieveDestroyAPIView,
+    RetrieveAPIView,
     ListAPIView
 )
 
@@ -29,7 +30,7 @@ class ListingDeleteView(RetrieveDestroyAPIView):
     serializer_class = ListingSerializer
     permission_classes = (permissions.AllowAny, )
 
-class ListingObjectsView(ListAPIView):
+class ListingDetailView(RetrieveAPIView):
     queryset = ListingModel.objects.all()
     serializer_class = ListingSerializer
     permission_classes = (permissions.AllowAny, )

@@ -4,21 +4,28 @@ import "../assets/ListingCard.style.scss"
 
 class ListingCard extends React.Component {
 	render() {
-		return(
+		
+		const card = this.props.data.map(item => {
+			return (
 			<div className="card">
 			  <img className="card-img-top" src="https://via.placeholder.com/300x200"/>
 			  <div className="card-body">
-			    <h5 className="card-title">test</h5>
-			    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a className="btn btn-primary">Go somewhere</a>
+			    <h5 className="card-title">{item.title}</h5>
+			    <p className="card-text">{item.description}</p>
+			    <a href={`/listing_details/${item.id}`} className="btn btn-primary" >View House</a>
+			    <p className="">{item.price}</p>
+			    <p className="">{item.sale_type}</p>
 			  </div>
-			  				  {this.props.data.map((item) => {
-				  	return <h1>{item.title}</h1>
-				  })}
 			</div>
+			)
+		})
 
-
+		return (
+			<div className="row">
+				{ card }
+			</div>
 		)
+	
 	}
 }
 
