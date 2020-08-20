@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'agent',
-    'house',
     'contact',
     'listing',
     'user',

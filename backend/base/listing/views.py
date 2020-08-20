@@ -1,5 +1,5 @@
 from rest_framework import permissions
-from .models import ListingModel
+from .models import ListingModel, HouseModel
 from .serializers import ListingSerializer
 from rest_framework.response import Response
 

@@ -6,3 +6,4 @@ class ListingSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = ListingModel
 		fields = "__all__"
+		depth = 1
