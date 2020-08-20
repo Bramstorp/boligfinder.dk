@@ -13,21 +13,39 @@ const ListingForm = () => (
 			<div className="col">
 		    <label for="">Sale or Rent</label>
 		    <select class="form-control">
-		      <option>1</option>
+			  <option>Sale or Rent</option>
+		      <option>Sale</option>
+		      <option>Rent</option>
 		    </select>
 		  </div>
 
 		  <div className="col">
 		    <label for="">Minimum Price</label>
 		    <select class="form-control">
-		      <option>1</option>
+		      <option>Minimum Price</option>
+		      <option>250.000</option>
+		      <option>500.000</option>
+		      <option>750.000</option>
+		      <option>1.000.000</option>
+		      <option>1.500.000</option>
+		      <option>2.000.000</option>
+		      <option>3.000.000</option>
+		      <option>4.000.000+</option>
 		    </select>
 		  </div>
 
 		  <div className="col">
 		    <label for="">Maximum Price</label>
 		    <select class="form-control">
-		      <option>1</option>
+		      <option>Maximum Price</option>
+		      <option>250.000</option>
+		      <option>500.000</option>
+		      <option>750.000</option>
+		      <option>1.000.000</option>
+		      <option>1.500.000</option>
+		      <option>2.000.000</option>
+		      <option>3.000.000</option>
+		      <option>4.000.000+</option>
 		    </select>
 		  </div>
 

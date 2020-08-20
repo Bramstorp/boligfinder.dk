@@ -9,6 +9,7 @@ class Navbar extends React.Component {
 		    <header className='navbar'> 	
 		        <Link className='navbar__title navbar__item' to='/'>BoligFinder</Link>
 		        <Link className='navbar__item' to='/'>Home</Link>
+		        <Link className='navbar__item' to='/Listing'>Listing</Link>
 		        <Link className='navbar__item' to='/contact'>Contact</Link>
 		        <Link className='navbar__item' to='/about'>About</Link>   
 		        <Link className='navbar__item' to='/signin'>Login</Link> 

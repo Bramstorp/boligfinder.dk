@@ -5,11 +5,13 @@ from django.urls import path
 from .views import (
     HouseRetriveUpdateAPIView,
     HouseRetriveDestroyAPIView,
-    HouseListCreateAPIView
+    HouseListCreateAPIView, 
+    HouseListAPIView
 )
 
 urlpatterns = [
-    path("create/", HouseListCreateAPIView.as_view),
-    path("<pk>/update", HouseRetriveUpdateAPIView.as_view),
-    path("<pk>/delete", HouseRetriveDestroyAPIView.as_view)
+	path("", HouseListAPIView.as_view()),
+    path("create/", HouseListCreateAPIView.as_view()),
+    path("<pk>/update", HouseRetriveUpdateAPIView.as_view()),
+    path("<pk>/delete", HouseRetriveDestroyAPIView.as_view())
 ]

@@ -1,6 +1,6 @@
 import React from 'react'
 import "../assets/ListingCard.style.scss"
-
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class ListingCard extends React.Component {
 	render() {
@@ -12,7 +12,7 @@ class ListingCard extends React.Component {
 			  <div className="card-body">
 			    <h5 className="card-title">{item.title}</h5>
 			    <p className="card-text">{item.description}</p>
-			    <a href={`/listing_details/${item.id}`} className="btn btn-primary" >View House</a>
+			    <Link to={`/listing_details/${item.slug}`} className="btn btn-primary" >View House</Link>
 			    <p className="">{item.price}</p>
 			    <p className="">{item.sale_type}</p>
 			  </div>

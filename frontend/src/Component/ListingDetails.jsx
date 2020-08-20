@@ -1,10 +1,10 @@
 import React from 'react'
 
 class ListingDetailsView extends React.Component {
-	render() {				
+	render() {
 		return (
 			<div className="row">
-				<h4>test</h4>
+				<h1>test</h1>
 			</div>
 		)
 	

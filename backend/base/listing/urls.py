@@ -19,8 +19,8 @@ from .views import (
 
 urlpatterns = [
     path('', ListingListView.as_view()),
-    path('create/', ListingCreateView.as_view()),
     path('<pk>/', ListingDetailView.as_view()),
+    path('create/', ListingCreateView.as_view()),
     path('<pk>/update', ListingUpdateView.as_view()),
     path('<pk>/delete', ListingDeleteView.as_view()),
 ]
