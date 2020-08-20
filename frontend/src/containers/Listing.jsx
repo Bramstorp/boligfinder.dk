@@ -17,8 +17,7 @@ class Listing extends React.Component  {
 				console.log(res.data)
 			})			
 	}
-
-
+	
 	render() {		
 		return (
 			<div className="container">

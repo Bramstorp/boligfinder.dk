@@ -1,4 +1,5 @@
 from django.db import models
+from ..house.models import HouseModel
 
 # Create your models here.
 class ListingModel(models.Model):
@@ -8,21 +9,11 @@ class ListingModel(models.Model):
 		("FOR_RENT", "For Rent"),
 	)
 
-	HOUSETYPE = (
-	    ("APARTMENT", "Apartment"),
-	    ("VILLA", "Villa"),
-	    ("TERRACED_HOUSE", "Terraced house"),
-	    ("FARM_HOUSE", "Farm house"),
-	    ("MANSION", "Mansion"),
-	)
-
 	slug = models.CharField(max_length=50, null=True, blank=True)
 	title = models.CharField(max_length=50, null=True, blank=True)
 	description = models.TextField(null=True)
 	sale_type = models.CharField(max_length=50, null=True, choices=SALETYPE)
 	price = models.IntegerField(null=True, blank=True)
-	home_type = models.CharField(max_length=50, null=True, choices=HOUSETYPE)
-	open_house = models.BooleanField(default=False)
 	main_image = models.ImageField(blank=True, null=True)
 	image_1 = models.ImageField(blank=True, null=True)
 	image_2 = models.ImageField(blank=True, null=True)
@@ -36,6 +27,7 @@ class ListingModel(models.Model):
 	image_10 = models.ImageField(blank=True, null=True)
 	is_published = models.BooleanField(default=True)
 	listed_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+	house = models.ForeignKey(HouseModel, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.title
