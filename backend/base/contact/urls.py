@@ -1,16 +1,13 @@
-# from .views import ContactViewSet
-# from rest_framework.routers import DefaultRouter
-
-# router = DefaultRouter()
-# router.register(r'', ContactViewSet, basename="contact")
-# urlpatterns = router.urls
-
 from django.urls import path
 
 from .views import (
-    ContactListCreateAPIView
+    ContactCreateAPIView,
+    ContactListAPIView,
+    ContactDestroyAPIView
 )
 
 urlpatterns = [
-    path("contact", ContactListCreateAPIView.as_view)
+    path("list", ContactListAPIView.as_view),
+    path("post", ContactCreateAPIView.as_view),
+    path("delete", ContactDestroyAPIView.as_view),
 ]

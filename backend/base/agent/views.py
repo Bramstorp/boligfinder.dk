@@ -2,30 +2,31 @@ from rest_framework import viewsets
 
 from .models import AgentModel
 from .serializers import AgentSerializer
-from rest_framework.permissions import AllowAny
+from rest_framework import permissions
 
 from rest_framework.generics import (
-    ListCreateAPIView, # post // Create
-    RetrieveUpdateAPIView, # GET / PUT / PATCH
-    RetrieveDestroyAPIView, # GET / DELETE
+    CreateAPIView, # POST
+    ListAPIView, # GET
+    DestroyAPIView, # Delete
+    UpdateAPIView # PUT PATCH
 )
 
-# class AgentViewSet(viewsets.ModelViewSet):
-#     permission_classes = [AllowAny]
-#     serializer_class = AgentSerializer
-#     queryset = AgentModel.objects.all()
-
-class AgentListCreateAPIView(ListCreateAPIView): 
+class AgentCreateAPIView(CreateAPIView): 
     queryset = AgentModel.objects.all()
     serializer_class = AgentSerializer
-    permissions_classes = (permission.AllowAny, )
+    permission_classes = (permissions.AllowAny(), )
 
-class AgentUpdateView(RetrieveUpdateAPIView):   
+class AgentListAPIView(ListAPIView): 
     queryset = AgentModel.objects.all()
     serializer_class = AgentSerializer
-    permissions_classes = (permission.AllowAny, )
+    permission_classes = (permissions.AllowAny(), )
 
-class AgentDeleteView(RetrieveDestroyAPIView):
+class AgentDestroyApiView(DestroyAPIView): 
     queryset = AgentModel.objects.all()
     serializer_class = AgentSerializer
-    permissions_classes = (permission.AllowAny, )
+    permission_classes = (permissions.AllowAny(), )
+
+class AgentUpdateAPIView(UpdateAPIView): 
+    queryset = AgentModel.objects.all()
+    serializer_class = AgentSerializer
+    permission_classes = (permissions.AllowAny(), )
