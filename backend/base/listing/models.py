@@ -51,6 +51,7 @@ class ListingModel(models.Model):
 	is_published = models.BooleanField(default=True)
 	listed_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 	house = models.ForeignKey(HouseModel, related_name='house', on_delete=models.SET_NULL, null=True)
+	open_house = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.title
