@@ -1,6 +1,6 @@
 from rest_framework import permissions
 from .models import ListingModel, HouseModel
-from .serializers import ListingSerializer
+from .serializers import ListingSerializer, HouseSerializer
 from rest_framework.response import Response
 
 from rest_framework.views import APIView
@@ -49,9 +49,19 @@ class SearchView(APIView):
         queryset = queryset.filter(sale_type__iexact=sale_type)
         
         price = data['price']
-        if price != -1:
-            queryset = queryset.filter(price__gte=price)
+        queryset = queryset.filter(price__gte=price)
 
-        
+        title = data["title"]
+        queryset = queryset.filter(title__iexact=title)
+
+        house = data["house"]
+        queryset = queryset.filter(house__icontains=house)
+
         serializer = ListingSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+class HouseView(ListCreateAPIView):
+    queryset = HouseModel.objects.all()
+    serializer_class = HouseSerializer
+    permission_classes = (permissions.AllowAny, )

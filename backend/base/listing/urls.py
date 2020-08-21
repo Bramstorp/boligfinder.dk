@@ -7,6 +7,7 @@ from .views import (
     ListingDetailView,
     ListingCreateView,
     SearchView,
+    HouseView,
 )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     path('<pk>/update', ListingUpdateView.as_view()),
     path('<pk>/delete', ListingDeleteView.as_view()),
     path('search', SearchView.as_view()),
+    path('house/', HouseView.as_view()),
 ]
