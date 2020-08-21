@@ -1,23 +1,18 @@
 import React from "react";
+import axios from 'axios';
 import { Form, Input, Button, Checkbox, Row, Col, Carousel  } from 'antd';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../actions/auth';
 
-const Signin = () => {
+const Signin = ({ login, isAuthenticated })=> {
   const onFinish = values => {
-    console.log('Success:', values);
+    login(values.email, values.password);
+    if (isAuthenticated) window.location = "/";
   };
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
-  };
-
-  const contentStyle = {
-    height: '400px',
-    color: '#fff',
-    lineHeight: '300px',
-    textAlign: 'center',
-    //background: '#364d79',
-    border: '2px solid #fff',
-    marginTop: '12px'
   };
 
   return (
@@ -38,11 +33,11 @@ const Signin = () => {
               onFinishFailed={onFinishFailed}
             >
               <Form.Item
-                label="Username"
-                name="username"
-                rules={[{ required: true, message: 'Please input your username!' }]}
+                label="Email"
+                name="email"
+                rules={[{ required: true, message: 'Please input your email!' }]}
               >
-                <Input placeholder="Username" style={{ width: '220px' }}/>
+                <Input placeholder="Email" style={{ width: '220px', marginLeft: "30px" }}/>
               </Form.Item>
 
               <Form.Item
@@ -67,21 +62,18 @@ const Signin = () => {
         </Col>
         <Col span={1}></Col>
         <Col span={10}>
-        {/* <Carousel autoplay dots={false}>
-          <div>
-            <img style={contentStyle} src="https://images.adsttc.com/media/images/5cdc/9130/284d/d19e/3300/032a/slideshow/_FI.jpg"></img>
-          </div>
-          <div>
-            <img style={contentStyle} src="https://cdn-m2.esoftsystems.com/10100019/CI-OH033/10160879836/220639224/BEST_CROP/3000/2000/72/Paulun_Bolig_CI-OH033_015.jpg"></img>
-          </div>
-          <div>
-            <img style={contentStyle} src="https://cdn-m2.esoftsystems.com/10100019/CI-OH033/10160879836/220661047/BEST_CROP/3000/2000/72/Paulun_Bolig_CI-OH033_021.jpg"></img>
-          </div>
-        </Carousel> */}
         </Col>
       </Row>
     </div>
   );
 };
 
-export default Signin;
+Signin.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps, { login })(Signin);

@@ -29,10 +29,19 @@ export default function(state = initialState, action) {
             }
         
         case SIGNUP_FAIL:
-        break
-        
+            alert('Cannot create user. Please try again!')
+            return {
+                ...state,
+                isAuthenticated: false,
+                loading: false
+            }
         case LOGIN_FAIL:
-        break
+            alert('Wrong email or password. Please try again!')
+            return {
+                ...state,
+                isAuthenticated: false,
+                loading: false
+            }
 
         case LOGOUT:
             localStorage.removeItem('token')
