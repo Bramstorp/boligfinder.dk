@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import axios from "axios"
 import ListingForm from "../Component/ListingForm"
-import Listings  from "../Component/List"
+import Listings  from "../Component/Listings"
+import Pagination from '../Component/Pagination';
+
 
 const Homepage = () => {
     const [listings, setListings] = useState([]);
@@ -35,7 +37,7 @@ const Homepage = () => {
 	return(
 		<div>
 			<ListingForm setListings={setListings} />
-			<Listings  />
+			<Listings  listings={currentListings}/>
 		</div>
 	)
 }
