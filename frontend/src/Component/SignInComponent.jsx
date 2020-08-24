@@ -1,14 +1,9 @@
 import React from "react";
-import axios from 'axios';
 import { Form, Input, Button, Checkbox, Row, Col, Carousel  } from 'antd';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { login } from '../actions/auth';
 
-const Signin = ({ login, isAuthenticated })=> {
+const Signin = () => {
   const onFinish = values => {
-    login(values.email, values.password);
-    if (isAuthenticated) window.location = "/";
+    console.log(values)
   };
 
   const onFinishFailed = errorInfo => {
@@ -68,12 +63,4 @@ const Signin = ({ login, isAuthenticated })=> {
   );
 };
 
-Signin.propTypes = {
-  login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
-};
-
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
-});
-export default connect(mapStateToProps, { login })(Signin);
+export default Signin;
