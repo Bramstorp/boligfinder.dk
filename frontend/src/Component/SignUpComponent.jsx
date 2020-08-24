@@ -1,25 +1,37 @@
 import React from "react";
-import { Form, Input, Button, Checkbox, Row, Col, Carousel  } from 'antd';
+import axios from 'axios';
+import { Form, Input, Button, Row, Col} from 'antd';
 
-const Signin = () => {
+const Signup = () => {
   const onFinish = values => {
-    console.log('Success:', values);
+    axios({
+      method: 'post',
+      url: 'http://127.0.0.1:8000/api/user/signup/',
+      headers: {}, 
+      data: {
+        name: values.fullname,
+        email: values.email,
+          password: values.password,
+          password2: values.password2, 
+      }
+    })
+    .then((response) => {
+      if (response.data.error == null || response.data.error == ""){
+        alert(response.data.success);
+        window.location = "/signin";
+      }
+      else 
+        alert(response.data.error);
+    }, (error) => {
+      console.log(error);
+      alert("Cannot create account. Please try again later!")
+    });
   };
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
-
-  const contentStyle = {
-    height: '400px',
-    color: '#fff',
-    lineHeight: '300px',
-    textAlign: 'center',
-    //background: '#364d79',
-    border: '2px solid #fff',
-    marginTop: '12px'
-  };
-
+  
   return (
     <div style={{backgroundImage: "url('/bg_signin.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
       <Row>
@@ -63,7 +75,7 @@ const Signin = () => {
 
               <Form.Item
                 label="Confirm password"
-                name="confirm password"
+                name="password2"
                 rules={[{ required: true, message: 'Please input your password again!' }]}
               >
                 <Input.Password placeholder="Confirm password" style={{ width: '250px', marginLeft: "-30px" }}/>
@@ -79,21 +91,10 @@ const Signin = () => {
         </Col>
         <Col span={1}></Col>
         <Col span={10}>
-        {/* <Carousel autoplay dots={false}>
-          <div>
-            <img style={contentStyle} src="https://images.adsttc.com/media/images/5cdc/9130/284d/d19e/3300/032a/slideshow/_FI.jpg"></img>
-          </div>
-          <div>
-            <img style={contentStyle} src="https://cdn-m2.esoftsystems.com/10100019/CI-OH033/10160879836/220639224/BEST_CROP/3000/2000/72/Paulun_Bolig_CI-OH033_015.jpg"></img>
-          </div>
-          <div>
-            <img style={contentStyle} src="https://cdn-m2.esoftsystems.com/10100019/CI-OH033/10160879836/220661047/BEST_CROP/3000/2000/72/Paulun_Bolig_CI-OH033_021.jpg"></img>
-          </div>
-        </Carousel> */}
         </Col>
       </Row>
     </div>
   );
 };
 
-export default Signin;
+export default Signup;
