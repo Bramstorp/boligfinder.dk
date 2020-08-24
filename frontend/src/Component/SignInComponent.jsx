@@ -3,7 +3,8 @@ import { Form, Input, Button, Checkbox, Row, Col, Carousel  } from 'antd';
 
 const Signin = () => {
   const onFinish = values => {
-    console.log('Success:', values);
+    login(values.email, values.password);
+    if (isAuthenticated) window.location = "/";
   };
 
   const onFinishFailed = errorInfo => {
