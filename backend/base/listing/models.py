@@ -37,7 +37,7 @@ class ListingModel(models.Model):
 	description = models.TextField(null=True)
 	sale_type = models.CharField(max_length=50, null=True, choices=SALETYPE)
 	price = models.IntegerField(null=True, blank=True)
-	main_image = models.ImageField(blank=True, null=True)
+	main_image = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True, null=True)
 	image_1 = models.ImageField(blank=True, null=True)
 	image_2 = models.ImageField(blank=True, null=True)
 	image_3 = models.ImageField(blank=True, null=True)

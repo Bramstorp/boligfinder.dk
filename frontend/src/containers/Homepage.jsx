@@ -3,6 +3,7 @@ import axios from "axios"
 import ListingForm from "../Component/ListingForm"
 import Listings  from "../Component/Listings"
 import Pagination from '../Component/Pagination';
+import HompageImage from "../Component/HomepageImage.jsx"
 
 
 const Homepage = () => {
@@ -36,6 +37,8 @@ const Homepage = () => {
 
 	return(
 		<div>
+            <HompageImage />
+            <br />
 			<ListingForm setListings={setListings} />
 			<Listings  listings={currentListings}/>
 		</div>

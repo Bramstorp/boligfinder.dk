@@ -8,11 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const ListingForm = (props) => {
 
     const [formData, setFormData] = useState({
-        sale_type: 'sale',
+        sale_type: 'FOR_SALE',
         price: "200000",
-        address: "",
-        area: "120",
-        area_ground: "250",
+        address: "frema vej 21",
+        area: "50",
+        area_ground: "500",
     });
 
     const { sale_type, price, address, area, area_ground } = formData;

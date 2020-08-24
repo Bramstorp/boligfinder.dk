@@ -1,6 +1,6 @@
 .card {
     padding: 4rem 3rem;
-    background-color: grey;
+    background-color: #efefef;
     border-radius: 0.5rem;
 
     &__header {
@@ -12,7 +12,7 @@
     }
 
     &__title {
-        color: black;
+        color: #328da8;
         font-size: 2.4rem;
         margin-bottom: 2rem;
     }
@@ -25,19 +25,19 @@
 
     &__info {
         font-size: 1.6rem;
-        color: tertiary;
+        color: #2fa18a;
         margin-bottom: 0.5rem;
     }
 
     &__saletype {
         font-size: 1.6rem;
-        color: green;
+        color: #34eb49;
         margin-bottom: 0.5rem;
     }
 
     &__hometype {
         font-size: 1.6rem;
-        color: tertiary;
+        color: #2fa18a;
         margin-bottom: 0.5rem;
     }
 
@@ -47,15 +47,15 @@
 
     &__link {
         font-size: 1.6rem;
-        color: blue;
+        color: #47acad;
         padding: 1rem 1.5rem;
-        border: 0.1rem solid blue;
+        border: 0.1rem solid #47acad;
         text-decoration: none;
 
         &:hover {
-            color: white;
-            border: 0.1rem solid black;
-            background-color: white;
+            color: #fff;
+            border: 0.1rem solid #47acad;
+            background-color: #328da8;
         }
     }
 }

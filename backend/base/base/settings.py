@@ -127,6 +127,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = "/images/"
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
+
+# REST_FRAMEWORK
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
@@ -136,6 +145,7 @@ REST_FRAMEWORK = {
     ],
 }
 
+# CORS
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
