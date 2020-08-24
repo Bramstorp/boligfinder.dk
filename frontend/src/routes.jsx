@@ -8,6 +8,7 @@ import Listing_Details from "./containers/Listing_Details"
 import Listing from "./containers/Listing"
 import SignIn from "./containers/SignIn"
 import SignUp from "./containers/SignUp"
+import LogOut from "./containers/LogOut"
 
 import NotFound from './Component/NotFound';
 
@@ -24,6 +25,7 @@ const BaseRoutes  = () => (
 			<Route exact path="/about" component={About} />
 			<Route exact path="/signin" component={SignIn} />
 			<Route exact path="/signup" component={SignUp} />
+			<Route exact path="/logout" component={LogOut} />
 			<Route component={NotFound} />
 		</Switch>
 	</Provider>
