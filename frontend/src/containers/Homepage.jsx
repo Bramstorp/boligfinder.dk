@@ -5,6 +5,8 @@ import Listings  from "../Component/Listings"
 import Pagination from '../Component/Pagination';
 import HompageImage from "../Component/HomepageImage.jsx"
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import "../assets/base.style.scss"
 
 const Homepage = () => {
     const [listings, setListings] = useState([]);
@@ -37,10 +39,19 @@ const Homepage = () => {
 
 	return(
 		<div>
-            <HompageImage />
-            <br />
-			<ListingForm setListings={setListings} />
-			<Listings  listings={currentListings}/>
+            <section>
+                <HompageImage />
+            </section>
+
+            <div className="container">
+                <section className='home__form'>
+                    <ListingForm setListings={setListings} />
+                </section>
+
+                <section className='home__listings'>
+                    <Listings listings={currentListings} />
+                </section>  		
+            </div>
 		</div>
 	)
 }

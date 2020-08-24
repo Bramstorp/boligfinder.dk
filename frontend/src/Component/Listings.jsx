@@ -9,8 +9,8 @@ const listings = ({ listings }) => {
         listings.map(listing => {
             return listingsOnPage.push(
                 <Card
-                    title={listing.house.title}
-                    address={listing.address}
+                    title={listing.title}
+                    address={listing.house.address}
                     city={listing.house.city}
                     state={listing.house.state}
                     price={listing.price}

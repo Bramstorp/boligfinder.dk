@@ -3,7 +3,6 @@ import axios from 'axios'
 import PropTypes from 'prop-types'
 import Loader from 'react-loader-spinner';
 import "../assets/ListingForm.style.scss"
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const ListingForm = (props) => {
 
@@ -48,8 +47,6 @@ const ListingForm = (props) => {
 
 
 return(
-	<div className="container">
-
 		<form onSubmit={e => onSubmit(e)}>
 
 			{/* Row 1*/}
@@ -225,7 +222,6 @@ return(
 			</div>
 		</form>
 		
-	</div>
 )
 }
 

@@ -22,8 +22,9 @@ class ListingCard extends React.Component {
 
 		return (
 			<div className="row">
-				{ card }
+				{ card }			
 			</div>
+
 		)
 	
 	}
