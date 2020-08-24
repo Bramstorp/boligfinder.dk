@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Image, Descriptions  } from 'antd';
+import { Row, Col, Descriptions  } from 'antd';
 import { Empty } from 'antd';
 
 class ListingDetailsView extends React.Component {
@@ -42,8 +42,7 @@ class ListingDetailsView extends React.Component {
 									<Descriptions.Item label="Zip code">{house_d.zipcode}</Descriptions.Item>
 									<Descriptions.Item></Descriptions.Item>
 									<Descriptions.Item label="Images">
-										<Image
-										width={300}
+										<img
 										src={house.main_image ? house.main_image : "https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg"}
 										/>
 									</Descriptions.Item>

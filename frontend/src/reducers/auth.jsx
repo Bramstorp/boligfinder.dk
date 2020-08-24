@@ -2,7 +2,7 @@ import { SIGNUP_SUCCESS, SIGNUP_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT} from '.
 
 const initialState = {
     token: localStorage.getItem('token'),
-    isAuthenticated: null,
+    isAuthenticated: localStorage.getItem('token')? true : false,
     loading: false
 };
 
