@@ -40,7 +40,7 @@ class ListingDetailsView extends React.Component {
 							<Descriptions
 								title={house.title}
 								bordered
-								column={{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }}
+								column={{ xxl: 4, xl: 4, lg: 4, md: 2, sm: 1, xs: 1 }}
 							>
 								<Descriptions.Item label="Home type">{house_d.home_type}</Descriptions.Item>
 								<Descriptions.Item label="Area">{house_d.area}</Descriptions.Item>
@@ -54,9 +54,8 @@ class ListingDetailsView extends React.Component {
 								<Descriptions.Item label="City">{house_d.city}</Descriptions.Item>
 								<Descriptions.Item label="State">{house_d.state}</Descriptions.Item>
 								<Descriptions.Item label="Zip code">{house_d.zipcode}</Descriptions.Item>
-								<Descriptions.Item></Descriptions.Item>
 								<Descriptions.Item label="Images">
-									<img
+									<img style={{width: "300px"}}
 									src={house.main_image ? house.main_image : "https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg"}
 									/>
 								</Descriptions.Item>
