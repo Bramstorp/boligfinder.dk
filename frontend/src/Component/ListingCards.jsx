@@ -17,6 +17,7 @@ class ListingCard extends React.Component {
 						  	<div className="card-body">
 						  		
 						  		<div className="row">
+						  		
 								    <div className="col">
 									    <h5 className="card-title">{item.title}</h5>
 									    <p className="card-text">{item.house.address}</p>
