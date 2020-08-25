@@ -48,18 +48,36 @@ class SearchView(APIView):
 
         sale_type = data['sale_type']
         queryset = queryset.filter(sale_type__iexact=sale_type)
+
+        home_type = data['home_type']
+        queryset = queryset.filter(house__home_type__iexact=home_type)
         
         price = data['price']
         queryset = queryset.filter(price__gte=price)
 
         address = data["address"]
-        queryset = queryset.filter(house__address__iexact=address)
+        queryset = queryset.filter(house__address__icontains=address)
 
         area = data['area']
         queryset = queryset.filter(house__area__gte=area)
 
         area_ground = data['area_ground']
         queryset = queryset.filter(house__area_ground__gte=area_ground)
+
+        bedrooms = data['bedrooms']
+        queryset = queryset.filter(house__bedrooms__gte=bedrooms)
+
+        bathrooms = data['bathrooms']
+        queryset = queryset.filter(house__bathrooms__gte=bathrooms)
+
+        floors = data['floors']
+        queryset = queryset.filter(house__floors__gte=floors)
+
+        rooms = data['rooms']
+        queryset = queryset.filter(house__rooms__gte=rooms) 
+
+        build_year = data['build_year']
+        queryset = queryset.filter(house__build_year__iexact=build_year)
 
         serializer = ListingSerializer(queryset, many=True)
         return Response(serializer.data)

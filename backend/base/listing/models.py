@@ -16,11 +16,11 @@ class HouseModel(models.Model):
 	zipcode = models.CharField(max_length=100, null=True)
 	rooms = models.IntegerField(null=True)
 	bedrooms = models.IntegerField(null=True)
-	bathrooms = models.DecimalField(max_digits=5, decimal_places=2)
+	bathrooms = models.IntegerField(null=True)
 	area = models.IntegerField(null=True)
 	area_ground = models.IntegerField(null=True)
 	floors = models.IntegerField(null=True)
-	build_year = models.DateTimeField(null=True)
+	build_year = models.IntegerField(null=True)
 	home_type = models.CharField(max_length=50, null=True, choices=HOUSETYPE)
 
 	def __str__(self):
@@ -37,7 +37,7 @@ class ListingModel(models.Model):
 	description = models.TextField(null=True)
 	sale_type = models.CharField(max_length=50, null=True, choices=SALETYPE)
 	price = models.IntegerField(null=True, blank=True)
-	main_image = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True, null=True)
+	main_image = models.ImageField(upload_to="Images", blank=True, null=True)
 	image_1 = models.ImageField(blank=True, null=True)
 	image_2 = models.ImageField(blank=True, null=True)
 	image_3 = models.ImageField(blank=True, null=True)

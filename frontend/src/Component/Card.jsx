@@ -8,11 +8,13 @@ const Card = (props) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     };
 
+    console.log(props)
+
     return (
         <div className='card'>
             <h3 className='card__title'>{props.title}</h3>
             <div className='card__header'>
-                <img className='card__header__photo' src={props.main_image} alt="Main Image"/>
+                <img className='card__header__photo' src={props.main_image} alt="House"/>
             </div>
             <p className='card__location'>{props.address}, {props.city}, {props.state}</p>
             <div className='row'>
@@ -24,7 +26,7 @@ const Card = (props) => {
                 <div className='col-1-of-3'>
                     <p className='card__saletype'>{props.sale_type}</p>
                     <p className='card__hometype'>{props.home_type}</p>
-                    <p className='card__sqft'>Area: {props.area}</p>
+                    <p className='card__area'>Area: {props.area}</p>
                 </div>
             </div>
             <Link className='card__link' to={`/listing_details/${props.slug}`}>View Listing</Link>         
@@ -34,7 +36,7 @@ const Card = (props) => {
 
 Card.propTypes = {
     title: PropTypes.string.isRequired,
-    photo_main: PropTypes.string.isRequired,
+    main_image: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
@@ -43,7 +45,7 @@ Card.propTypes = {
     bathrooms: PropTypes.string.isRequired,
     sale_type: PropTypes.string.isRequired,
     home_type: PropTypes.string.isRequired,
-    sqft: PropTypes.number.isRequired,
+    area: PropTypes.number.isRequired,
     slug: PropTypes.string.isRequired,
 };
 
