@@ -53,8 +53,8 @@ class ListingCard extends React.Component {
 		
 
 		return (
-			<div className="row">
-				{ card }			
+			<div className="row container">
+				{ card }					
 			</div>
 
 		)

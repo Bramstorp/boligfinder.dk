@@ -19,7 +19,9 @@ const listings = ({ listings }) => {
                     bedrooms={listing.house.bedrooms}
                     bathrooms={listing.house.bathrooms}
                     area={listing.house.area}
+                    area_ground={listing.house.area_ground}
                     main_image={listing.main_image}
+                    rooms={listing.house.rooms}
                     slug={listing.slug}
                 />
             );

@@ -29,12 +29,12 @@ const Card = (props) => {
                 <div className='col'>
                     <p className='Card__saletype'>{props.sale_type}</p>
                     <p className='Card__hometype'>{props.home_type}</p>
-                    <p className='Card__area'>Area: {props.area}</p>
+                    <p className='Card__hometype'>Area: {props.area}</p>
                 </div>
 
             </div>
 
-            <Link className='btn btn-primary' to={`/listing_details/${props.slug}`}>View Listing</Link>         
+            <Link className='btn btn-primary pt-2' to={`/listing_details/${props.slug}`}>View Listing</Link>         
         </div>
     );
 };
