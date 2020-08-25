@@ -27,6 +27,8 @@
 ### Setup Python packages 
 - pip install packagename
 
+<br />
+
 ### Setup project
 Clone Project to desktop
 cd boligfinder.dk 
