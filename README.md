@@ -17,9 +17,9 @@
 <br />
 
 ### Tools needed 
--Python 3.xx
--Pip
--npm / yarn
+- Python 3.xx
+- Pip
+- npm / yarn
 
 ### Python packages 
 - Check in requirements there u can see all the packages needed for this project
