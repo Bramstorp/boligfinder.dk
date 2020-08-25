@@ -11,25 +11,30 @@ const Card = (props) => {
     console.log(props)
 
     return (
-        <div className='card'>
-            <h3 className='card__title'>{props.title}</h3>
-            <div className='card__header'>
-                <img className='card__header__photo' src={props.main_image} alt="House"/>
+        <div className='Card'>
+            <h3 className='Card__title'>{props.title}</h3>
+            <div className='Card__header'>
+                <img className='Card__header__photo' src={props.main_image} alt="House"/>
             </div>
-            <p className='card__location'>{props.address}, {props.city}, {props.state}</p>
+            <p className='Card__location'>{props.address}, {props.city}, {props.state}</p>
+            
             <div className='row'>
-                <div className='col-2-of-3'>
-                    <p className='card__info'>Price: ${numberWithCommas(props.price)}</p>
-                    <p className='card__info'>Bedrooms: {props.bedrooms}</p>
-                    <p className='card__info'>Bathrooms: {props.bathrooms}</p>
+            
+                <div className='col'>
+                    <p className='Card__info'>Price: ${numberWithCommas(props.price)}</p>
+                    <p className='Card__info'>Bedrooms: {props.bedrooms}</p>
+                    <p className='Card__info'>Bathrooms: {props.bathrooms}</p>
                 </div>
-                <div className='col-1-of-3'>
-                    <p className='card__saletype'>{props.sale_type}</p>
-                    <p className='card__hometype'>{props.home_type}</p>
-                    <p className='card__area'>Area: {props.area}</p>
+
+                <div className='col'>
+                    <p className='Card__saletype'>{props.sale_type}</p>
+                    <p className='Card__hometype'>{props.home_type}</p>
+                    <p className='Card__area'>Area: {props.area}</p>
                 </div>
+
             </div>
-            <Link className='card__link' to={`/listing_details/${props.slug}`}>View Listing</Link>         
+
+            <Link className='btn btn-primary' to={`/listing_details/${props.slug}`}>View Listing</Link>         
         </div>
     );
 };

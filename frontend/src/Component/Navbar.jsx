@@ -18,15 +18,17 @@ function Logout(){
 
 class Navbar extends React.Component {
 	render() {
-		return(
-		    <header className='navbar'> 	
+		return(			
+		    <header className='navbar'> 
+		    	<div className='container'>	
 		        <Link className='navbar__title navbar__item' to='/'>BoligFinder</Link>
 		        <Link className='navbar__item' to='/'>Home</Link>
 		        <Link className='navbar__item' to='/Listing'>Listing</Link>
 		        <Link className='navbar__item' to='/contact'>Contact</Link>
 		        <Link className='navbar__item' to='/about'>About</Link>   
 		        <Logout />
-		    </header>
+		        </div>
+		    </header>	    
 	    )
     }
 }

@@ -44,6 +44,7 @@ const Homepage = () => {
             </section>
 
             <div className="container">
+                
                 <section className='home__form'>
                     <ListingForm setListings={setListings} />
                 </section>

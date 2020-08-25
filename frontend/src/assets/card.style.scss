@@ -1,5 +1,5 @@
-.card {
-    padding: 4rem 3rem;
+.Card {
+    padding: 30px 50px;
     background-color: #efefef;
     border-radius: 0.5rem;
 
@@ -13,49 +13,33 @@
 
     &__title {
         color: #328da8;
-        font-size: 2.4rem;
+        font-size: 2rem;
         margin-bottom: 2rem;
     }
 
     &__location {
-        font-size: 1.4rem;
+        font-size: 1rem;
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     &__info {
-        font-size: 1.6rem;
-        color: #2fa18a;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
     }
 
     &__saletype {
-        font-size: 1.6rem;
-        color: #34eb49;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
     }
 
     &__hometype {
-        font-size: 1.6rem;
-        color: #2fa18a;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
     }
 
     &__area {
-        font-size: 1.4rem;
+        font-size: 0.9rem;
     }
 
-    &__link {
-        font-size: 1.6rem;
-        color: #47acad;
-        padding: 1rem 1.5rem;
-        border: 0.1rem solid #47acad;
-        text-decoration: none;
-
-        &:hover {
-            color: #fff;
-            border: 0.1rem solid #47acad;
-            background-color: #328da8;
-        }
-    }
 }
