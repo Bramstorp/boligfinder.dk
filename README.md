@@ -16,7 +16,20 @@
 
 <br />
 
+### Tools needed 
+-Python 3.xx
+-Pip
+-npm / yarn
+
+### Python packages 
+- Check in requirements there u can see all the packages needed for this project
+
+### Setup Python packages 
+- pip install packagename
+
 ### Setup project
-## Test
+-Clone Project to desktop
+-cd boligfinder.dk 
+
 
 ### boligfinder.dk was build by - 
