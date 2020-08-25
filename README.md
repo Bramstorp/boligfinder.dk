@@ -28,8 +28,8 @@
 - pip install packagename
 
 ### Setup project
--Clone Project to desktop
--cd boligfinder.dk 
+Clone Project to desktop
+cd boligfinder.dk 
 
 
 ### boligfinder.dk was build by - 
