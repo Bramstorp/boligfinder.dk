@@ -33,4 +33,4 @@
 
 
 
-### boligfinder.dk was build by - 
+### boligfinder.dk was build by the people in the Contributors list
