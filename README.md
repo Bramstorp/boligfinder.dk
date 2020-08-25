@@ -1,5 +1,3 @@
-### boligfinder.dk was build by - 
-
 ## Real Estate Website:
 - This website was build with React + Django
 - API is build with REST_FRAMEWORK
@@ -21,3 +19,4 @@
 ### Setup project
 ## Test
 
+### boligfinder.dk was build by - 
