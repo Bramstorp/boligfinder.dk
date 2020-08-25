@@ -30,8 +30,7 @@
 <br />
 
 ### Setup project
-Clone Project to desktop
-cd boligfinder.dk 
+
 
 
 ### boligfinder.dk was build by - 
