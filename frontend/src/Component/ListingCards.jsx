@@ -7,7 +7,8 @@ class ListingCard extends React.Component {
 		
 		const card = this.props.data.map((item, index) => {
 			return (
-					<div className="container card">
+				<div className="container">
+					<div className="card">
 						<div className="card-horizontal">
 						  	
 						  	<div className="img-square-wrapper">
@@ -49,12 +50,13 @@ class ListingCard extends React.Component {
 						    </div>
 						</div>
 					</div>
+				</div>
 			)
 		})
 		
 
 		return (
-			<div className="row container">
+			<div className="row">
 				{ card }					
 			</div>
 
