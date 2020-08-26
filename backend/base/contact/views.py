@@ -11,4 +11,4 @@ from rest_framework.generics import (
 class ContactListCreateAPIView(ListCreateAPIView):
     queryset = ContactModel.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = (permissions.AllowAny(), )
+    permission_classes = (permissions.AllowAny, )

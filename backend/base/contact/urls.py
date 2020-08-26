@@ -12,5 +12,5 @@ from .views import (
 )
 
 urlpatterns = [
-    path("contact", ContactListCreateAPIView.as_view)
+    path("", ContactListCreateAPIView.as_view())
 ]
