@@ -3,7 +3,8 @@ import { SIGNUP_SUCCESS, SIGNUP_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT} from '.
 const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: localStorage.getItem('token')? true : false,
-    loading: false
+    loading: false,
+    isAgent: localStorage.getItem('agent')? true : false,
 };
 
 export default function(state = initialState, action) {
@@ -45,6 +46,7 @@ export default function(state = initialState, action) {
 
         case LOGOUT:
             localStorage.removeItem('token')
+            localStorage.removeItem('agent')
             return {
                 ...state,
                 token: null,

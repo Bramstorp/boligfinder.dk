@@ -1,16 +1,27 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import "../assets/Navbar.style.scss"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {NavDropdown} from 'react-bootstrap';
 
-function Logout(){
+const Logout = () =>{
 	var token = localStorage.getItem('token');
 	if (token != null && token) return <Link className='navbar__item' to='/logout'>Logout</Link>
 	else{
 		return (
 			<div>
-				<Link className='navbar__item' to='/signin'>Login</Link> 
-				<Link className='navbar__item' to='/signup'>Sign up</Link> 
+				<div style={{display : 'inline-block'}}>
+					<Link className='navbar__item' to='/signin'>Login</Link>
+				</div>
+				<div style={{display : 'inline-block'}}>
+					<NavDropdown title="Sign up">
+						<NavDropdown.Item href="/signup">User</NavDropdown.Item>
+						<NavDropdown.Item href="/signupagent">Agent</NavDropdown.Item>
+					</NavDropdown>
+				</div>
+				
+				{/* <Link className='navbar__item' to='/signup'>Sign up</Link>
+				<Link className='navbar__item' to='/signupagent'>Sign up as agent</Link>   */}
+				
 			</div>   
 		)
 	}

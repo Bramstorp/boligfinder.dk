@@ -42,7 +42,7 @@ const Signup = () => {
               src="/LogoSignin.png"
               style={{marginBottom: "-50px", marginTop: "-30px"}}
             ></img>
-            <h1>Sign up</h1>
+            <h2>Sign up as user</h2>
              
             <Form
               name="basic"
