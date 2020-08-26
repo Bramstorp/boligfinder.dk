@@ -241,7 +241,7 @@ const ListingForm = (props) => {
 				</div>
 
 				<div className="button col">
-					<button className="form-control btn btn-outline-success" type="submit">Search</button>
+					<button className="form-control btn-outline-success" type="submit">Search</button>
 				</div>
 		  	</div>
 		</form>

@@ -35,6 +35,7 @@ class ListingDetailsView extends React.Component {
 	render() {
 		var house = this.state.listings;
 		var house_d = house.house;
+		var agent = this.state.listings.agent;
 		const numberWithCommas = (x) => {
 		    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 		};
@@ -47,7 +48,7 @@ class ListingDetailsView extends React.Component {
 						<div className="row rowstyle listing_container">
 							
 							<div className="col colstyle">						
-								<a>Open House</a>
+								<a><FontAwesomeIcon icon="home"/> Open House</a>
 							</div>
 							
 							<div className="col colstyle">
@@ -82,28 +83,20 @@ class ListingDetailsView extends React.Component {
 									<li>House Build: {house_d.build_year}</li>
 								</ul>
 
-								<p className="agent">Agent Name, Agent</p>
+								<p className="agent">Agent: {agent.full_name}</p>
 
 								<div className="row rowstyle">
 									
-									<p className="col colstyle">{house_d.area}</p>
-									<p className="col colstyle">{house_d.area_ground}</p>
-									<p className="col colstyle">{house_d.bedrooms}</p>
-									<p className="col colstyle">{house_d.bathrooms}</p>
-									<p className="col colstyle">{house_d.rooms}</p>
-									<p className="col colstyle">{house_d.floors}</p>
+									<p className="col colstyle info"><FontAwesomeIcon icon="home"/> Area: {house_d.area}</p>
+									<p className="col colstyle info"><FontAwesomeIcon icon="object-group"/> Area Ground: {house_d.area_ground}</p>
+									<p className="col colstyle info"><FontAwesomeIcon icon="object-group"/> Floors: {house_d.floors}</p>
 
 								</div>
 
-								<div className="row rowstyle">
-									
-									<p className="col colstyle">Area</p>
-									<p className="col colstyle">Area Ground</p>
-									<p className="col colstyle">Bedrooms</p>
-									<p className="col colstyle">Bathrooms</p>
-									<p className="col colstyle">Rooms</p>
-									<p className="col colstyle">Floors</p>
-
+								<div className="row rowstyle">			
+									<p className="col colstyle info"><FontAwesomeIcon icon="bed"/> Bedrooms: {house_d.bedrooms}</p>
+									<p className="col colstyle info"><FontAwesomeIcon icon="bath"/> Bathrooms: {house_d.bathrooms}</p>
+									<p className="col colstyle info"><FontAwesomeIcon icon="house-user"/> Rooms: {house_d.rooms}</p>					
 								</div>
 
 							</div>

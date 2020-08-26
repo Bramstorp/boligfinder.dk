@@ -1,4 +1,5 @@
 from django.db import models
+from agent.models import AgentModel
 
 # Create your models here.
 class HouseModel(models.Model):
@@ -32,6 +33,7 @@ class ListingModel(models.Model):
 		("FOR_RENT", "For Rent"),
 	)
 
+	agent = models.ForeignKey(AgentModel, on_delete=models.DO_NOTHING, null=True)
 	slug = models.CharField(max_length=50, null=True, blank=True)
 	title = models.CharField(max_length=50, null=True, blank=True)
 	description = models.TextField(null=True)
