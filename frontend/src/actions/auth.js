@@ -32,6 +32,25 @@ export const signup = ({ name, email, password, password2 }) => async dispatch =
 }
 
 export const login = (email, password) => async dispatch => {
+
+    var listings = [];
+    axios.get('http://127.0.0.1:8000/api/agent/create/')
+    .then((response) => {
+        listings = response.data
+    }, (error) => {
+        alert("Cannot connect to the server. Please try again later!")
+    });	
+
+
+    function findObjectByKey(array, key, value, key2, value2) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i][key] === value && array[i][key2] === value2) {
+                return array[i];
+            }
+        }
+        return null;
+    }
+
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -41,6 +60,10 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({ email, password })
     try {
         const res = await axios.post('http://127.0.0.1:8000/api/token/', body, config)
+        var array = findObjectByKey(listings, 'email', email, 'password', password);
+        if (array != null){
+            localStorage.setItem('agent', '1')
+        }
         dispatch({
             type: LOGIN_SUCCESS,
             payload: res.data
@@ -54,7 +77,6 @@ export const login = (email, password) => async dispatch => {
         dispatch({
             type: LOGIN_FAIL
         });
-
         dispatch(setAlert('Error Authenticating', 'error'))
     }
 }

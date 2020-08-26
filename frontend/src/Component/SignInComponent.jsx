@@ -1,14 +1,13 @@
 import React from "react";
-import axios from 'axios';
 import { Form, Input, Button, Checkbox, Row, Col, Carousel  } from 'antd';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../actions/auth';
+import axios from 'axios';
 
 const Signin = ({ login, isAuthenticated })=> {
   const onFinish = values => {
     login(values.email, values.password);
-    if (isAuthenticated) window.location = "/";
   };
 
   const onFinishFailed = errorInfo => {
