@@ -3,7 +3,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import BaseRoutes from "./routes"
 import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "./Component/fontawesome.jsx"
 
 import CustomLayout from "./hocs/Layout"
 
