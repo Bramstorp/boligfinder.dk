@@ -20,19 +20,29 @@ class ListingCard extends React.Component {
 						  		<div className="row">
 						  		
 								    <div className="col">
-									    <h5 className="card-title">{item.title}</h5>
 									    <p className="card-text">{item.house.address}</p>
+										<p className="card-text">{item.house.city}</p>
+										<p className="card-text">{item.house.zipcode} {item.house.state}</p>
+										<p className="card-text">Build Year: {item.house.build_year}</p>
 							    	</div>
 
 								    <div className="col">
 									    <div className="row">
-										    <p className="col">House Price: ${item.price}</p>
+											<p className="col">House Price: {item.price}</p>
 										    <p className="col">House Type: {item.house.home_type}</p>
 									    </div>
 									    <div className="row">
 										    <p className="col">Area Ground: {item.house.area_ground}m2</p>
 										    <p className="col">Area: {item.house.area}m2</p>
 									    </div>
+										<div className="row">
+											<p className="col">Bathromms: {item.house.bathrooms}</p>
+											<p className="col">Bedrooms: {item.house.bedrooms}</p>
+										</div>
+										<div className="row">
+											<p className="col">Floors: {item.house.floors}</p>
+											<p className="col">Rooms: {item.house.rooms}</p>
+										</div>
 									</div>
 
 							    </div>
