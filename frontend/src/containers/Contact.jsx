@@ -1,25 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux';
+import { setAlert } from '../actions/alert';
+import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-class Contactpage extends React.Component {
-	render() {
-	
-	const [formData, setFormData] = useState({
-        sale_type: 'FOR_SALE',
-        home_type: 'APARTMENT',
-        price: "200000",
-        address: "",
-        area: "50",
-        area_ground: "500",
-        bedrooms: "1",
-        bathrooms: "1",
-        floors: "1",
-        rooms: "1",
-        build_year: "1910"
+const Contactpage = ({ setAlert }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
     });
 
-    const { sale_type, price, address, area, area_ground, home_type, bedrooms, bathrooms, floors, rooms, build_year } = formData;
+    const { name, email, subject, message } = formData;
 
     const [loading, setLoading] = useState(false);
 
@@ -35,20 +33,18 @@ class Contactpage extends React.Component {
         };
 
         setLoading(true);
-        axios.post("http://127.0.0.1:8000/api/listing/search", { sale_type, price, address, area, area_ground, home_type, bedrooms, bathrooms, floors, rooms, build_year }, config)
+        axios.post("http://127.0.0.1:8000/api/contact/", { name, email, subject, message }, config)
         .then(res => {
+            setAlert('Message Sent', 'success');
             setLoading(false);
-            props.setListings(res.data)
-            window.scrollTo(0, 0)
-            console.log(res.data)
+            window.scrollTo(0, 0);
         })
         .catch(err => {
-            setLoading(false)
-            window.scrollTo(0, 0)
+            setAlert('Error with Sending Message', 'error');
+            setLoading(false);
+            window.scrollTo(0, 0);
         })
-
     };
-
 
 	return(
 			<div className="container">
@@ -82,39 +78,47 @@ class Contactpage extends React.Component {
 			    </div>
 
 			  </div>
+
 			  <div className="row">
 			    <div className="col-lg-8 mb-4">
 			      <h3>Send us a Message</h3>
 			      
-			      <form>
+			      <form onSubmit={e => onSubmit(e)}>
 			        <div className="control-group form-group">
+			          
 			          <div className="controls">
 			            <label>Full Name:</label>
-			            <input name="fullname" type="text" className="form-control" id="name" required data-validation-required-message="Please enter your name."/>
+			            <input type="text" className="form-control" name="name" onChange={e => onChange(e)} value={name} required data-validation-required-message="Please enter your name."/>
 			            <p className="help-block"></p>
 			          </div>
 
 			        </div>
 
 			        <div className="control-group form-group">
+			          	
 			          	<div className="controls">
-			            	<label>Phone Number:</label>
-			            	<input name="phone" type="tel" className="form-control" id="phone" required data-validation-required-message="Please enter your phone number."/>
+			            	<label>Email Address:</label>
+			            	<input type="email" name="email" onChange={e => onChange(e)} value={email} className="form-control" required data-validation-required-message="Please enter your email address."/>
 			        	</div>
+
 			        </div>
 
 			        <div className="control-group form-group">
+			          
 			          <div className="controls">
-			            <label>Email Address:</label>
-			            <input name="email" type="email" className="form-control" id="email" required data-validation-required-message="Please enter your email address."/>
+			            <label>Subject</label>
+			            <input type="subject" name="subject" onChange={e => onChange(e)} value={subject} className="form-control" required data-validation-required-message="Please enter your email address."/>
 			          </div>
+
 			        </div>
 
 			        <div className="control-group form-group">
+			          
 			          <div className="controls">
 			            <label>Message:</label>
-			            <textarea name="message" rows="10" cols="100" className="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999"></textarea>
+			            <textarea type="message" name="message" onChange={e => onChange(e)} value={message} rows="10" cols="100" className="form-control" required data-validation-required-message="Please enter your message" maxlength="999"></textarea>
 			          </div>
+
 			        </div>
 
 			        <div id="success"></div>
@@ -126,7 +130,10 @@ class Contactpage extends React.Component {
 			  </div>
 			</div>
 		)
-	}
 }
 
-export default Contactpage
+Contactpage.propTypes = {
+    setAlert: PropTypes.func.isRequired
+};
+
+export default connect(null, { setAlert })(Contactpage);
