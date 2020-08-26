@@ -7,12 +7,63 @@
 	background-color: #e9f0f6;
 }
 
-.row{
+.title{
+	padding-top: 40px;
+	font-size: 30px;
+}
+
+.features{
+	font-size: 30px;
+	padding-top: 30px;
+	text-align: left;
+}
+
+.address{
+	font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.agent{
+	padding-top: 20px;
+}
+
+.left-side{
+	text-align: left;
+}
+
+.description{
+	text-align: left;
+	padding-top: 50px;
+}
+
+.pictures{
+	text-align: left;
+	padding-top: 30px;
+	font-size: 30px;
+}
+
+.location{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.photo{
+	max-height: 250px;
+}
+
+.rowstyle{
 	margin: auto;
 	text-align: center;
 }
 
-.col{
+.colstyle{
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+
+.price{
+	font-size: 18px;	
 }

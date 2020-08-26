@@ -2,7 +2,6 @@ import React from 'react'
 import { Row, Col, Descriptions  } from 'antd';
 import { Empty } from 'antd';
 import axios from 'axios'
-import "../assets/listing_detailst.style.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ListingDetailsView extends React.Component {
@@ -36,36 +35,103 @@ class ListingDetailsView extends React.Component {
 	render() {
 		var house = this.state.listings;
 		var house_d = house.house;
+		const numberWithCommas = (x) => {
+		    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		};
 		if (house_d)
 			return (
 				<div>
-					<img className="container img-container"
-					src={house.main_image ? house.main_image : "https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg"}
-					/>
+					<img className="container img-container" src={house.main_image ? house.main_image : "https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg"}/>
 					
 					<div className="container">
-						<div className="row listing_container">
+						<div className="row rowstyle listing_container">
 							
-							<div className="col">						
+							<div className="col colstyle">						
 								<a>Open House</a>
 							</div>
 							
-							<div className="col">
+							<div className="col colstyle">
 								<a>Features</a>
 							</div>
 
-							<div className="col">
+							<div className="col colstyle">
 								<a>Photos</a>
 							</div>
 							
-							<div className="col">
+							<div className="col colstyle">
 								<a>Location</a>
 							</div>
 							
-							<div className="col">
+							<div className="col colstyle">
 								<a>Contract</a>
 							</div>
+						</div>
 
+						<div className="row rowstyle">
+							
+							<div className="col-lg-6 left-side">				
+								
+								<p className="title">{house.title}</p>
+								<p className="address">{house_d.address}, {house_d.state}, {house_d.zipcode}, {house_d.city} </p>
+								<p className="price">Price: ${numberWithCommas(house.price)}</p>
+
+								<ul className="list-group">
+									<li>Property ID: {house_d.id} </li>
+									<li>Posted on: {house.listed_date}</li>
+									<li>House Type: {house_d.home_type}</li>
+									<li>House Build: {house_d.build_year}</li>
+								</ul>
+
+								<p className="agent">Agent Name, Agent</p>
+
+								<div className="row rowstyle">
+									
+									<p className="col colstyle">{house_d.area}</p>
+									<p className="col colstyle">{house_d.area_ground}</p>
+									<p className="col colstyle">{house_d.bedrooms}</p>
+									<p className="col colstyle">{house_d.bathrooms}</p>
+									<p className="col colstyle">{house_d.rooms}</p>
+									<p className="col colstyle">{house_d.floors}</p>
+
+								</div>
+
+								<div className="row rowstyle">
+									
+									<p className="col colstyle">Area</p>
+									<p className="col colstyle">Area Ground</p>
+									<p className="col colstyle">Bedrooms</p>
+									<p className="col colstyle">Bathrooms</p>
+									<p className="col colstyle">Rooms</p>
+									<p className="col colstyle">Floors</p>
+
+								</div>
+
+							</div>
+
+							<div className="col-lg-6">
+								<p className="description">{house.description}</p>
+							</div>
+
+
+							<div className="col-lg-6">
+								<p className="features">Features</p>
+								<ul class="list-group">
+									<li class="list-group-item">Cras justo odio</li>
+									<li class="list-group-item">Dapibus ac facilisis in</li>
+									<li class="list-group-item">Morbi leo risus</li>
+									<li class="list-group-item">Porta ac consectetur ac</li>
+									<li class="list-group-item">Vestibulum at eros</li>
+								</ul>
+							</div>
+
+							<div className="col-lg-6">
+								<p className="pictures">Pictures</p>
+								<img className="container photo"src={house.main_image ? house.main_image : "https://upload.wikimedia.org/wikipedia/commons/6/6c/No_image_3x4.svg"}/>
+							</div>						
+						</div>
+
+						<div className="container location">
+							<iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
 						</div>
 					</div>
 

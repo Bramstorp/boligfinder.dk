@@ -16,7 +16,7 @@ const Card = (props) => {
             <div className='Card__header'>
                 <img className='Card__header__photo' src={props.main_image} alt="House"/>
             </div>
-            <p className='Card__location'>{props.address}, {props.city}, {props.state}</p>
+            <p className='Card__location'>{props.address}, {props.state}, {props.zipcode}, {props.city}</p>
             
             <div className='row'>
             

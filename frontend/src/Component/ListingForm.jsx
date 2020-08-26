@@ -52,7 +52,7 @@ const ListingForm = (props) => {
 
 
 
-return(
+	return(
 		<form onSubmit={e => onSubmit(e)}>
 
 			{/* Row 1*/}

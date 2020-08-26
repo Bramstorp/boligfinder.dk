@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import ListingDetailsView from "../Component/ListingDetails"
+import "../assets/listing_detailst.style.scss"
 
 class ListingDetails extends React.Component  {
 	render() {		

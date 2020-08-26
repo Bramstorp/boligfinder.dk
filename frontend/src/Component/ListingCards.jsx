@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class ListingCard extends React.Component {
 	render() {
-		
+	
 		const card = this.props.data.map((item, index) => {
 			return (
 				<div className="container">
