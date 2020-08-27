@@ -43,7 +43,8 @@ const HouseForm = (props) => {
 
 	return(
 		<form className="form-horizontal container former" onSubmit={e => onSubmit(e)}>
-		
+			<h2 className="house_title">Add House</h2>
+
 			<div className="form-group row">
 		    	<label className="col-sm-2 control-label">Address:</label>		  
 			  	<div className="col-sm-10">
@@ -52,7 +53,7 @@ const HouseForm = (props) => {
 			</div>
 
 			<div className="form-group row">
-		    	<label className="col-sm-2 control-label">Address:</label>		  
+		    	<label className="col-sm-2 control-label">City:</label>		  
 			  	<div className="col-sm-10">
 			    	<input name="title" className="form-control" type="text" value=""/>		    
 			  	</div>
