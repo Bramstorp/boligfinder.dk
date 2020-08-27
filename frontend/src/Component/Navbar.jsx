@@ -17,11 +17,7 @@ const Logout = () =>{
 						<NavDropdown.Item href="/signup">User</NavDropdown.Item>
 						<NavDropdown.Item href="/signupagent">Agent</NavDropdown.Item>
 					</NavDropdown>
-				</div>
-				
-				{/* <Link className='navbar__item' to='/signup'>Sign up</Link>
-				<Link className='navbar__item' to='/signupagent'>Sign up as agent</Link>   */}
-				
+				</div>						
 			</div>   
 		)
 	}
@@ -38,6 +34,10 @@ class Navbar extends React.Component {
 		        <Link className='navbar__item' to='/contact'>Contact</Link>
 		        <Link className='navbar__item' to='/about'>About</Link>   
 		        <Logout />
+				<NavDropdown title="Submit">
+					<NavDropdown.Item href="/submit_house">House</NavDropdown.Item>
+					<NavDropdown.Item href="/submit_listing">Listing</NavDropdown.Item>
+				</NavDropdown>
 		        </div>
 		    </header>	    
 	    )

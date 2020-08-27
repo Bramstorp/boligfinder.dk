@@ -10,6 +10,8 @@ import SignIn from "./containers/SignIn"
 import SignUp from "./containers/SignUp"
 import SignUpAgent from "./containers/SignUpAgent"
 import LogOut from "./containers/LogOut"
+import Submit_House from "./containers/SubmitHouse"
+import Submit_Listing from "./containers/SubmitListing"
 
 import NotFound from './Component/NotFound';
 
@@ -23,6 +25,8 @@ const BaseRoutes  = () => (
 			<Route exact path="/contact" component={Contactpage} />
 			<Route exact path="/listing_details/:slug" component={Listing_Details} />
 			<Route exact path="/listing" component={Listing} />
+			<Route exact path="/submit_house" component={Submit_House} />
+			<Route exact path="/submit_listing" component={Submit_Listing} />
 			<Route exact path="/about" component={About} />
 			<Route exact path="/signin" component={SignIn} />
 			<Route exact path="/signup" component={SignUp} />
