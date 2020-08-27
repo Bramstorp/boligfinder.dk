@@ -4,8 +4,9 @@
 }
 
 .houseimg {
-	max-height: 332px;
-	max-width: 332px;
+	height: 332px;
+	width: 332px;
+	object-fit: cover;
 }
 
 .card {
