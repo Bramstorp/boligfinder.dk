@@ -1,39 +1,48 @@
-.Card {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding: 30px 50px;
-    background-color: #efefef;
-    border-radius: 0.5rem;
-
-    &__header {
-        width: 100%;
-
-        &__photo {
-            width: 100%;
-        }
-    }
-
-    &__title {
-        color: #328da8;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
+.about_title{
+    font-size: 50px;
 }
 
-.descriptionAbout {
-    margin: 10;
-    padding: 0;
+.about_title_top{
+    padding-top: 30px;
 }
 
-.Cool {
-    margin-top: 10%;
-    margin-bottom: 10%;
+.side_img{
+    padding-top: 30px;
 }
 
-.pic {
-    margin-left: 0;
-    padding-left: 0;
-    text-align: left;
-	padding-top: 15px;
-	font-size: 30px;
+.service_title{
+    font-size: 50px;
+}
+
+.service_title_top{
+    padding-top: 60px;
+}
+
+.info_numb{
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: #55407d;
+}
+
+.info_value{
+	color: #ffffff;
+}
+
+.info_object{
+	color: #ffffff;
+}
+
+.contact_us{
+	padding-top: 40px;
+	padding-bottom: 50px;
+
+}
+
+.test{
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
+.service_title{
+	margin-bottom: 0px !important;
 }
