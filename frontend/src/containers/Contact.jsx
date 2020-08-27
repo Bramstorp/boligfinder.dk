@@ -32,12 +32,13 @@ const Contactpage = ({ setAlert }) => {
             }
         };
 
-        setLoading(true);
+        setLoading(true)
         axios.post("http://127.0.0.1:8000/api/contact/", { name, email, subject, message }, config)
         .then(res => {
-            setAlert('Message Sent', 'success');
-            setLoading(false);
-            window.scrollTo(0, 0);
+            setAlert('Message Sent', 'success')
+            setLoading(false)
+            window.scrollTo(0, 0)
+            window.location = "/"
         })
         .catch(err => {
             setAlert('Error with Sending Message', 'error');

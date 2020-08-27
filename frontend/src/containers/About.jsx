@@ -1,6 +1,6 @@
 import React from 'react'
-import bootstrap, { Card, CardGroup } from 'react-bootstrap'
 import '../assets/aboutCardSingle.style.scss'
+import { Link } from 'react-router-dom';
 
 
 class About extends React.Component {
@@ -122,7 +122,7 @@ class About extends React.Component {
 
 					<div className="row rowstyle">
 						<div className="contact_us col">
-							<button className="test btn btn-success col-lg-4">CONTACT US</button>
+							<Link className="test btn btn-success col-lg-4" to={"/contact/"}>CONTACT US</Link>
 						</div>
 					</div>
 
