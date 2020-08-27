@@ -1,8 +1,9 @@
 import React from 'react'
+import ListingForm from "../Component/Submit_Listing_Form"
 
 const Submit_Listing = () => (
 	<div>
-	 	Submit_Listing
+	 	<ListingForm />
 	</div>
 )
 
