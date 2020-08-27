@@ -1,0 +1,39 @@
+.Card {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 30px 50px;
+    background-color: #efefef;
+    border-radius: 0.5rem;
+
+    &__header {
+        width: 100%;
+
+        &__photo {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        color: #328da8;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.descriptionAbout {
+    margin: 10;
+    padding: 0;
+}
+
+.Cool {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.pic {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+	padding-top: 15px;
+	font-size: 30px;
+}
