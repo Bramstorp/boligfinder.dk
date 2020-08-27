@@ -47,7 +47,7 @@ const HouseForm = ({ setAlert, props }) => {
         	setAlert('House added', 'success');
             setLoading(false);
             window.scrollTo(0, 0)
-            
+            window.location("/")           
         })
         .catch(err => {
         	setAlert('Error House was not added', 'error');
