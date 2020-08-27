@@ -55,7 +55,7 @@ class ListingCard extends React.Component {
 										myHouse: this.props.data[index]
 									}
 								}
-								className="btn btn-primary" >View House</Link>
+								className="btn btn-primary view-house" >View House</Link>
 
 						    </div>
 						</div>

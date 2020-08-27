@@ -77,12 +77,17 @@ class SearchView(APIView):
         queryset = queryset.filter(house__rooms__gte=rooms) 
 
         build_year = data['build_year']
-        queryset = queryset.filter(house__build_year__iexact=build_year)
+        queryset = queryset.filter(house__build_year__iexact=build_year)   
 
         serializer = ListingSerializer(queryset, many=True)
         return Response(serializer.data)
 
 class HouseView(ListCreateAPIView):
+    queryset = HouseModel.objects.all()
+    serializer_class = HouseSerializer
+    permission_classes = (permissions.AllowAny, )
+
+class HouseDeleteView(RetrieveDestroyAPIView):
     queryset = HouseModel.objects.all()
     serializer_class = HouseSerializer
     permission_classes = (permissions.AllowAny, )
