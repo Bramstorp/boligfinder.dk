@@ -5,7 +5,28 @@ import {NavDropdown} from 'react-bootstrap';
 
 const Logout = () =>{
 	var token = localStorage.getItem('token');
-	if (token != null && token) return <Link className='navbar__item' to='/logout'>Logout</Link>
+	var agent = localStorage.getItem('agent');
+	if (token != null && token) {
+
+		if (agent)
+			return (
+				<div>
+					<div style={{display : 'inline-block'}}>
+						<NavDropdown title="Submit">
+							<NavDropdown.Item href="/submit_house">Create House</NavDropdown.Item>
+							<NavDropdown.Item href="/submit_listing">Create Listing</NavDropdown.Item>
+							<NavDropdown.Item href="/submit_listing">View Houses</NavDropdown.Item>
+							<NavDropdown.Item href="/submit_listing">View Listings</NavDropdown.Item>
+						</NavDropdown>
+					</div>
+					<div style={{display : 'inline-block'}}>
+						<Link className='navbar__item' to='/logout'>Logout</Link>
+					</div>
+				</div>
+			)
+		else
+			return <Link className='navbar__item' to='/logout'>Logout</Link>
+	}
 	else{
 		return (
 			<div>
@@ -34,12 +55,6 @@ class Navbar extends React.Component {
 		        <Link className='navbar__item' to='/contact'>Contact</Link>
 		        <Link className='navbar__item' to='/about'>About</Link>   
 		        <Logout />
-				<NavDropdown title="Submit">
-					<NavDropdown.Item href="/submit_house">Create House</NavDropdown.Item>
-					<NavDropdown.Item href="/submit_listing">Create Listing</NavDropdown.Item>
-					<NavDropdown.Item href="/submit_listing">View Houses</NavDropdown.Item>
-					<NavDropdown.Item href="/submit_listing">View Listings</NavDropdown.Item>
-				</NavDropdown>
 		        </div>
 		    </header>	    
 	    )

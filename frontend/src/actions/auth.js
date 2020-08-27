@@ -62,7 +62,7 @@ export const login = (email, password) => async dispatch => {
         const res = await axios.post('http://127.0.0.1:8000/api/token/', body, config)
         var array = findObjectByKey(listings, 'email', email, 'password', password);
         if (array != null){
-            localStorage.setItem('agent', '1')
+            localStorage.setItem('agent', JSON.stringify(array))
         }
         dispatch({
             type: LOGIN_SUCCESS,
