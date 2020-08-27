@@ -7,13 +7,12 @@ import Loader from 'react-loader-spinner';
 
 const ListingForm = () => {
     const [formData, setFormData] = useState({
-        slug: '',
         agent: null,
         title: '',
         description: '',
         price: '',
         sale_type: "",
-        main_image: null,
+        main_image: "",
         is_published: true
     });
 
@@ -84,8 +83,8 @@ const ListingForm = () => {
               <label className="col-sm-2 col-form-label">Sale Type:</label>      
               <div className="col-sm-6">
                 <select class="form-control" name='sale_type' onChange={e => onChange(e)} value={sale_type}>
-                    <option>For Sale</option>
-                    <option>For Rent</option>
+                    <option>FOR_SALE</option>
+                    <option>FOR_RENT</option>
                 </select>     
               </div>
           </div>
