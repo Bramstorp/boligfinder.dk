@@ -15,8 +15,8 @@ const Logout = () =>{
 						<NavDropdown title="Submit">
 							<NavDropdown.Item href="/submit_house">Create House</NavDropdown.Item>
 							<NavDropdown.Item href="/submit_listing">Create Listing</NavDropdown.Item>
-							<NavDropdown.Item href="/submit_listing">View Houses</NavDropdown.Item>
-							<NavDropdown.Item href="/submit_listing">View Listings</NavDropdown.Item>
+							<NavDropdown.Item href="">View Houses</NavDropdown.Item>
+							<NavDropdown.Item href="">View Listings</NavDropdown.Item>
 						</NavDropdown>
 					</div>
 					<div style={{display : 'inline-block'}}>
