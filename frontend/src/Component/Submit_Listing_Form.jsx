@@ -36,7 +36,7 @@ const ListingForm = () => {
           setAlert('Listing added', 'success');
             setLoading(false);
             window.scrollTo(0, 0)
-            window.location("/")
+            window.location = "/"
             
         })
         .catch(error => {
