@@ -52,19 +52,19 @@ class ListingDetailsView extends React.Component {
 							</div>
 							
 							<div className="col colstyle">
-								<a>Features</a>
+								<a><FontAwesomeIcon icon="hammer"/> Features</a>
 							</div>
 
 							<div className="col colstyle">
-								<a>Photos</a>
+								<a><FontAwesomeIcon icon="portrait"/> Photos</a>
 							</div>
 							
 							<div className="col colstyle">
-								<a>Location</a>
+								<a><FontAwesomeIcon icon="map"/> Location</a>
 							</div>
 							
 							<div className="col colstyle">
-								<a>Contract</a>
+								<a><FontAwesomeIcon icon="address-book"/> Contract</a>
 							</div>
 						</div>
 
